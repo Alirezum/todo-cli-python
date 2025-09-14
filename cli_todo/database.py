@@ -3,7 +3,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-from models import Task
+from .models import Task
 
 DB_PATH = Path(__file__).parent / "tasks.db"
 

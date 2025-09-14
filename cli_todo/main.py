@@ -1,10 +1,9 @@
 from datetime import datetime
 
 import typer
-from click import echo
 
-import database
-from models import Task
+from cli_todo import database
+from cli_todo.models import Task
 
 app = typer.Typer()
 
