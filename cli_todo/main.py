@@ -1,6 +1,7 @@
 from datetime import datetime
 
 import typer
+from tabulate2 import tabulate
 
 from cli_todo import database
 from cli_todo.models import Task
@@ -14,7 +15,6 @@ def add(
     description: str = typer.Option(..., prompt="Task Description"),
     due_date: str = typer.Option("", prompt="Due Date (YYYY-MM-DD) optional"),
 ):
-
     if due_date:
         due = datetime.fromisoformat(due_date)
     else:
@@ -32,8 +32,20 @@ def list_tasks():
         typer.echo("No tasks found!")
         return
 
+    table_data = []
     for task in tasks:
-        typer.echo(task)
+        due_date_str = task.due_date.strftime("%Y-%m-%d") if task.due_date else "-"
+        table_data.append(
+            [
+                task.id,
+                task.title,
+                "done" if task.completed else "pending",
+                due_date_str,
+                task.description,
+            ]
+        )
+    headers = {"ID": 1, "Title": 2, "status": 3, "Due Date": 4, "Description": 5}
+    typer.echo(tabulate(table_data, headers=headers, tablefmt="rounded_outline"))
 
 
 @app.command()

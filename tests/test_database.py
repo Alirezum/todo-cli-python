@@ -1,8 +1,8 @@
-import sqlite3
 from datetime import datetime
 from pathlib import Path
 
 import pytest
+
 from cli_todo import database
 from cli_todo.models import Task
 
