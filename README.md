@@ -14,7 +14,7 @@ A simple command-line interface (CLI) application for managing your to-do tasks 
 
 ## 🖼️ Screenshot
 
-
+![screenshot](screenshot/screenshot.png)
 
 ---
 
@@ -100,5 +100,5 @@ pip install pytest
 
 
 ## License
-
-MIT License — see `LICENSE` file.
+This project is licensed under the 
+MIT License — see [MIT License](LICENSE) file.
