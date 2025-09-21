@@ -3,6 +3,7 @@ name = "cli-todo-python"
 version = "0.1.0"
 description = "A simple CLI todo app"
 authors = [{name = "Alireza", email = "alirezueffati@gmail.com"}]
+readme = "README.md"
 requires-python = ">=3.10"
 
 [project.scripts]
